@@ -49,7 +49,7 @@ public class Pizza {
                 this.price += 120;
                 this.addTopping += 120;
             }
-            this.addToppingC = false;
+            this.addToppingC = true;
         }
     }
 
