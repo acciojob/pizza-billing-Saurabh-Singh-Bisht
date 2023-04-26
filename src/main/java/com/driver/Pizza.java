@@ -5,9 +5,9 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    private boolean takeAway;
-    private boolean addCheese;
-    private boolean addtopping;
+    private int takeAway;
+    private int addCheese;
+    private int addTopping;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -28,39 +28,39 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        if(this.addCheese == false){
-            this.addCheese = true;
-            this.price += 80;
-            this.bill += "Extra Cheese Added: " + 80 + "\n";
-        }
+        this.price += 80;
+        this.addCheese += 80;
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(this.addtopping == false){
-            if(this.isVeg){
-                this.price += 70;
-                this.bill += "Extra Toppings Added: " + 70 + "\n";
-            }
-            else {
-                this.price += 120;
-                this.bill += "Extra Toppings Added: " + 120 + "\n";
-            }
-            this.addtopping = true;
+        if(this.isVeg){
+            this.price += 70;
+            this.addTopping += 70;
+        }
+        else {
+            this.price += 120;
+            this.addTopping += 120;
         }
     }
 
     public void addTakeaway(){
         // your code goes here
-        if(this.takeAway == false){
-            this.takeAway = true;
-            this.price += 20;
-            this.bill += "Paperbag Added: " + 20 + "\n";
-        }
+        this.price += 20;
+        this.takeAway += 20;
     }
 
     public String getBill(){
         // your code goes here
+        if(this.addCheese > 0){
+            this.bill += "Extra Cheese Added: " + this.addCheese + "\n";
+        }
+        if(this.addTopping > 0){
+            this.bill += "Extra Toppings Added: " + this.addTopping + "\n";
+        }
+        if(this.takeAway > 0){
+            this.bill += "Paperbag Added: " + this.takeAway + "\n";
+        }
         this.bill += "Total Price: " + this.price;
         return this.bill;
     }
