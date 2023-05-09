@@ -68,7 +68,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        String var ="Base Price of Pizza: " + basePrice + "\n";
+        String var ="Base Price of The Pizza: " + basePrice + "\n";
         if(isCheeseAdded){
             var += "Extra Cheese Added: " + cheesePrice + "\n";
         }
